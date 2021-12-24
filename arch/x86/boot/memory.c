@@ -15,6 +15,18 @@
 
 #define SMAP	0x534d4150	/* ASCII "SMAP" */
 
+/**
+ * HBO: This is called in main.c (using detect_memory() function). This method will
+ * call BIOS function 0x15 and read E820 entries. These entries will find the system 
+ * memory map. You will see following output for data foudn in this method:
+ * 
+ * Sample logs:
+ * [    0.000000] BIOS-e820: [mem 0x0000000000000000-0x000000000009fbff] usable
+ * [    0.000000] BIOS-e820: [mem 0x000000000009fc00-0x000000000009ffff] reserved
+ * [    0.000000] BIOS-e820: [mem 0x00000000000f0000-0x00000000000fffff] reserved
+ * [    0.000000] BIOS-e820: [mem 0x0000000000100000-0x0000000007fdffff] usable  
+ * 
+ */
 static void detect_memory_e820(void)
 {
 	int count = 0;
