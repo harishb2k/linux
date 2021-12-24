@@ -1288,7 +1288,9 @@ void __init e820__memory_setup(void)
 	memcpy(e820_table_kexec, e820_table, sizeof(*e820_table_kexec));
 	memcpy(e820_table_firmware, e820_table, sizeof(*e820_table_firmware));
 
-	pr_info("BIOS-provided physical RAM map:\n");
+	// HBO: This method is part of flow where we setup kernel memory map 
+	// HBO: The info is pulled from BISO and stored in kernel 
+	pr_info("HBO: BIOS-provided physical RAM map:\n");
 	e820__print_table(who);
 }
 

@@ -131,6 +131,9 @@ static void init_heap(void)
 	}
 }
 
+/**
+ * HBO: Entry point for linux
+ */
 void main(void)
 {
 	/* First, copy the boot header into the "zeropage" */
