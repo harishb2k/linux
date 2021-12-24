@@ -23,6 +23,12 @@ qemu-system-x86_64 -kernel arch/x86/boot/bzImage -hda /dev/zero -append "root=/d
 qemu-system-x86_64 -no-kvm -kernel arch/x86/boot/bzImage -hda /dev/zero -append "root=/dev/zero console=ttyS0" -serial stdio -display none
 ```
 
+#### A sample initrd program "Hello World"
+Read ```ignore/README.md``` 
+```shell
+# Assumeing you built "test.cpio.gz" from above instruction. And also have "bzImage" built already. 
+qemu-system-x86_64 -kernel bzImage -initrd test.cpio.gz -hda /dev/zero -append "root=/dev/zero console=ttyS0" -serial stdio -display none
+```
 
 ### NOTE
 In this repo, I have already craeted .config file require in "First time setup to build". You can just build and run.
